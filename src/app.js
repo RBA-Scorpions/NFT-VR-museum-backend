@@ -22,4 +22,8 @@ app.use(express.urlencoded({
 app.use(express.static("public")); // static files which anyone can access
 app.use(cookieParser()); // get cookies from browser and also to set it
 
+
+import userRoutes from "./routes/user.routes.js";
+app.use("/nft-vr/service/user/auth", userRoutes);
+
 export { app };

@@ -1,9 +1,6 @@
 import { connectDB } from "./db/connectDB.js";
-import dotenv from "dotenv";
 import { app } from "./app.js";
-dotenv.config({
-    path: ".env",
-});
+
 
 app.get("/nft-vr/service/", (req, res) => {
     return res.status(200).json({ message: "Working" });
@@ -21,7 +18,7 @@ const startServer = () => {
         .catch((err) => {
             console.log(
                 "MongoDB connection error. Please make sure MongoDB is up and running. " +
-                    err
+                err
             );
         });
 };
